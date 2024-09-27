@@ -18,18 +18,23 @@ total_files=$(grep -o 'https://panels-cdn\.imgix\.net[^"]*' json_data/media.json
 
 # ASCII art frames for the liberator
 liberator_frames=(
-    "  O  "
-    " /|\\ "
-    " / \-~~-----0"
-    "  O  "
-    " /|\\ "
-    " / \--~~----0"
-    "  O  "
-    "-/|\\ "
-    " / \----~~--0"
-    "  O  "
-    "-/|\\-"
-    " / \------~~0"
+
+"  O  /0| "
+" /|\/  | "
+" / \   $ "
+
+"  O  /0| "
+" /|\/  $ "
+" / \   | "
+
+"  O  /0$ "
+" /|\/  | "
+" / \   | "
+
+"  O  /0|$"
+" /|\/  | "
+" / \   | "
+
 )
 
 # Function to display the file liberation animation
@@ -54,7 +59,7 @@ display_animation() {
     printf "+%${prison_width}s+\n" | tr ' ' '-'
 
     echo
-    echo "Files liberated: $counter / $total_files"
+    #echo "Files liberated: $counter / $total_files"
 }
 
 # Function to download a file
