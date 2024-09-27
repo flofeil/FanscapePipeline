@@ -35,7 +35,7 @@ liberator_frames=(
 # Function to display the file liberation animation
 display_animation() {
     local prison_width=40
-    local frame=$((counter))
+    local frame=$((counter % 4))
 
     clear  # Clear screen
     echo "Unshackle the files"
@@ -67,10 +67,10 @@ download_file() {
 }
 
 # Read the JSON file and extract URLs
-echo "Extracting URLs and downloading files..."
+echo "Examining the lock and choosing the correct tools..."
 grep -o 'https://panels-cdn\.imgix\.net[^"]*' json_data/media.json | sort -u | while read -r url; do
     download_file "$url"
 done
 
 echo -e "\nAll $total_files files have been liberated and downloaded to the 'downloaded_files' directory."
-echo "MKBSD's digital prison has been emptied, and the files are free!"
+echo "MKBHD's digital prison has been emptied, and the files are free!"
